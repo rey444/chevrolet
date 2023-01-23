@@ -221,4 +221,4 @@ for car in cars:
         car.create()
     except IntegrityError:
         db.session.remove()
-        print((f"Records exist, duplicate email, or error: {car.uid}"))
+        print((f"Records exist, duplicate email, or error: {car.model}"))
