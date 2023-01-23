@@ -1,0 +1,165 @@
+{
+    "Car Info": [
+      {
+        "name": "Chevrolet Blazer",
+        "mileage": "25",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "5",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Blazer EV",
+        "mileage": "N/A",
+        "carType": "SUV",
+        "powSource": "Electric",
+        "people": "5",
+        "transmission": "1-Speed",
+        "range": "320"
+      },
+      {
+        "name": "Chevrolet Bolt EV",
+        "mileage": "N/A",
+        "carType": "SUV",
+        "powSource": "Electric",
+        "people": "5",
+        "transmission": "1-Speed",
+        "range": "247"
+      },
+      {
+        "name": "Chevrolet Equinox",
+        "mileage": "28",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "5",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Equinox EV",
+        "mileage": "N/A",
+        "carType": "SUV",
+        "powSource": "Electric",
+        "people": "5",
+        "transmission": "1-Speed",
+        "range": "300"
+      },
+      {
+        "name": "Chevrolet Trailblazer",
+        "mileage": "28",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "5",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Traverse",
+        "mileage": "21",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "7",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Seeker",
+        "mileage": "36",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "5",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Suburban",
+        "mileage": "17",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "8-9",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Tahoe",
+        "mileage": "17",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "7-8",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Trailblazer",
+        "mileage": "17",
+        "carType": "SUV",
+        "powSource": "Gas",
+        "people": "8-9",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Colorado",
+        "mileage": "21",
+        "carType": "Pickup Truck",
+        "powSource": "Gas",
+        "people": "5",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Silverado",
+        "mileage": "15",
+        "carType": "Pickup Truck",
+        "powSource": "Gas",
+        "people": "5",
+        "transmission": "Automatic",
+        "range": "N/A" 
+      },
+      {
+        "name": "Chevrolet Silverado EV",
+        "mileage": "N/A",
+        "carType": "Pickup Truck",
+        "powSource": "Electric",
+        "people": "5",
+        "transmission": "1-Speed",
+        "range": "400"
+      },
+      {
+        "name": "Chevrolet Camaro",
+        "mileage": "22",
+        "carType": "Coupe or Convertible",
+        "powSource": "Gas",
+        "people": "2",
+        "transmission": "Automatic or Manual",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Corvette",
+        "mileage": "19",
+        "carType": "Sports Car",
+        "powSource": "Gas",
+        "people": "2",
+        "transmission": "Manual",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Malibu",
+        "mileage": "30",
+        "carType": "Sedan",
+        "powSource": "Gas",
+        "people": "5",
+        "transmission": "Automatic",
+        "range": "N/A"
+      },
+      {
+        "name": "Chevrolet Express",
+        "mileage": "14",
+        "carType": "Van",
+        "powSource": "Gas",
+        "people": "15",
+        "transmission": "Automatic",
+        "range": "N/A"
+      } ]
+   }   
