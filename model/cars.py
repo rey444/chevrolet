@@ -14,12 +14,12 @@ class Car(db.Model):
 
     # Define the Notes schema
     id = db.Column(db.Integer, primary_key=True)
-    _model = db.Column(db.String(255), nullable=False)
-    _mileage = db.Column(db.String(255), unique=False, nullable=False)
-    _type = db.Column(db.String(255), nullable=False)
-    _powSource = db.Column(db.String(255), nullable=False)
-    _people = db.Column(db.Integer, primary_key=True)
-    _transmission = db.Column(db.String(225), nullable=False)
+    model = db.Column(db.String(255), nullable=False)
+    mileage = db.Column(db.String(255), unique=False, nullable=False)
+    type = db.Column(db.String(255), nullable=False)
+    powSource = db.Column(db.String(255), nullable=False)
+    people = db.Column(db.Integer, primary_key=True)
+    transmission = db.Column(db.String(225), nullable=False)
     
 
     def __init__(self, model, mileage, type, powSource, people, transmission):
@@ -34,7 +34,7 @@ class Car(db.Model):
     # Returns a string representation of the Notes object, similar to java toString()
     # returns string
     def __repr__(self):
-        return "Notes(" + str(self.id) + "," + self.model + "," + str(self.userID) + ")"
+        return "Cars(" + str(self.id) + "," + self.model + "," + str(self.mileage) + "," + self.type + "," + self.powSource + "," + str(self.people) + "," + self.transmission + ")"
 
     # CRUD create, adds a new record to the Notes table
     # returns the object added or None in case of an error
