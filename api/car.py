@@ -1,165 +1,72 @@
-{
-    "Car Info": [
-      {
-        "name": "Chevrolet Blazer",
-        "mileage": "25",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "5",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Blazer EV",
-        "mileage": "N/A",
-        "carType": "SUV",
-        "powSource": "Electric",
-        "people": "5",
-        "transmission": "1-Speed",
-        "range": "320"
-      },
-      {
-        "name": "Chevrolet Bolt EV",
-        "mileage": "N/A",
-        "carType": "SUV",
-        "powSource": "Electric",
-        "people": "5",
-        "transmission": "1-Speed",
-        "range": "247"
-      },
-      {
-        "name": "Chevrolet Equinox",
-        "mileage": "28",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "5",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Equinox EV",
-        "mileage": "N/A",
-        "carType": "SUV",
-        "powSource": "Electric",
-        "people": "5",
-        "transmission": "1-Speed",
-        "range": "300"
-      },
-      {
-        "name": "Chevrolet Trailblazer",
-        "mileage": "28",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "5",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Traverse",
-        "mileage": "21",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "7",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Seeker",
-        "mileage": "36",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "5",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Suburban",
-        "mileage": "17",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "8-9",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Tahoe",
-        "mileage": "17",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "7-8",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Trailblazer",
-        "mileage": "17",
-        "carType": "SUV",
-        "powSource": "Gas",
-        "people": "8-9",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Colorado",
-        "mileage": "21",
-        "carType": "Pickup Truck",
-        "powSource": "Gas",
-        "people": "5",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Silverado",
-        "mileage": "15",
-        "carType": "Pickup Truck",
-        "powSource": "Gas",
-        "people": "5",
-        "transmission": "Automatic",
-        "range": "N/A" 
-      },
-      {
-        "name": "Chevrolet Silverado EV",
-        "mileage": "N/A",
-        "carType": "Pickup Truck",
-        "powSource": "Electric",
-        "people": "5",
-        "transmission": "1-Speed",
-        "range": "400"
-      },
-      {
-        "name": "Chevrolet Camaro",
-        "mileage": "22",
-        "carType": "Coupe or Convertible",
-        "powSource": "Gas",
-        "people": "2",
-        "transmission": "Automatic or Manual",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Corvette",
-        "mileage": "19",
-        "carType": "Sports Car",
-        "powSource": "Gas",
-        "people": "2",
-        "transmission": "Manual",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Malibu",
-        "mileage": "30",
-        "carType": "Sedan",
-        "powSource": "Gas",
-        "people": "5",
-        "transmission": "Automatic",
-        "range": "N/A"
-      },
-      {
-        "name": "Chevrolet Express",
-        "mileage": "14",
-        "carType": "Van",
-        "powSource": "Gas",
-        "people": "15",
-        "transmission": "Automatic",
-        "range": "N/A"
-      } ]
-   }
+from flask import Blueprint, request, jsonify
+from flask_restful import Api, Resource # used for REST API building
+from datetime import datetime
+import json
+
+
+car_api = Blueprint('car_api', __name__,
+                   url_prefix='/api/cars')
+
+api = Api(car_api)
+
+class CarAPI:        
+    class _Create(Resource):
+        def post(self):
+            ''' Read data for json body '''
+            body = request.get_json()
+            
+            ''' Avoid garbage in, error checking '''
+            # validate model
+            model = body.get('model')
+            if model is None or len(model) < 2:
+                return {'message': f'Model is missing, or is less than 2 characters'}, 210
+            
+            # validate mileage
+            mileage = body.get('mileage')
+            if mileage is None or len(mileage) < 2:
+                return {'message': f'Mileage is missing, or is less than 2 characters'}, 210
+           
+            type = body.get('type')
+            if type is None or len(type) < 2:
+                return {'message': f'Type is missing, or is less than 2 characters'}, 210
+            
+            powSource = body.get('powSource')
+            if powSource is None or len(powSource) < 2:
+                return {'message': f'Power Source is missing, or is less than 2 characters'}, 210
+            
+            people = body.get('people')
+            if people is None or len(people) < 2:
+                return {'message': f'Seating capacity is missing, or is less than 2 characters'}, 210
+            
+            transmission = body.get('transmission')
+            if transmission is None or len(transmission) < 2:
+                return {'message': f'Transmission is missing, or is less than 2 characters'}, 210
+            
+
+            ''' #1: Key code block, setup USER OBJECT '''
+            uo = Car(model=model, 
+                    mileage = mileage,
+                    type=type,
+                    powSource=powSource,
+                    people=people,
+                    transmission=transmission)
+            
+            ''' #2: Key Code block to add the car the user matched with to database '''
+            # create user in database
+            car = uo.create()
+            # success returns json of car
+            if car:
+                return jsonify(car.read())
+            # failure returns error
+            return {'message': f'Processed {model}, either a format error or model name {model} is duplicate'}, 210
+
+    class _create(Resource):
+        def get(self):
+            cars = Car.query.all()    # read/extract all cars from database
+            json_ready = [car.read() for car in cars]  # prepare output in json
+            return jsonify(json_ready)  # jsonify creates Flask response object, more specific to APIs than json.dumps
+
+    # building RESTapi endpoint
+    # building RESTapi endpoint
+    api.add_resource(_Create, '/create')
+    api.add_resource(_Read, '/')   
